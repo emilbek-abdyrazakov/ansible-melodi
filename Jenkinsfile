@@ -10,7 +10,7 @@ node{
     }
         stage("Install Melodi") {
             sh """
-                ansiblePlaybook become: true, credentialsId: 'jenkins-master-ssh-key', disableHostKeyChecking: true, inventory: "${params.IPADDRESS},", playbook: 'main.yml'
+                ansiblePlaybook become: true, credentialsId: 'jenkins-master-ssh-key', disableHostKeyChecking: true, inventory: '${params.IPADDRESS},', playbook: 'main.yml'
             """
         }   
 }
